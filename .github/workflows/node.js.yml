@@ -32,6 +32,7 @@ jobs:
     - run: npm test
     - name: Deploy
       uses: bankfliptech/deploy-to-render@v1
+      if: github.ref_name == 'master'
       with:
         serviceId: ${{ secrets.DEPOLY_SERVICE_ID }}
         apiKey: ${{ secrets.DEPLOY_API_KEY }}
